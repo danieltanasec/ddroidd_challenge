@@ -1,0 +1,62 @@
+@import "variables";
+
+.cart-container {
+  height: 371px;
+  width: 262px;
+  padding: 29px;
+  background-color: $light-blue;
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
+}
+
+.cart-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+
+  span {
+    margin-right: 18px;
+    font-size: 24px;
+  }
+}
+
+.cart-description {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 25px;
+  margin-top: 20px;
+}
+
+.cart-items {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  border: 1px solid white;
+  border-style: dashed;
+  margin-top: 20px;
+
+  .cart-empty {
+    opacity: 0.77;
+    width: 100%;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    align-self: center;
+  }
+}

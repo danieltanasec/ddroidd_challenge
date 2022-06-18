@@ -1,0 +1,25 @@
+@import "variables";
+
+.container {
+  position: relative;
+  box-sizing: border-box;
+  padding: 160px 57px 70px 57px;
+}
+
+.sub-container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  flex-shrink: 0;
+
+  @media screen and (max-width: 700px) {
+    flex-direction: column;
+  }
+}
+
+.items-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+}
