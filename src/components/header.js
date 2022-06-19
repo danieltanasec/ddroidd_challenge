@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export default function HeaderComponent() {
+export function HeaderComponent() {
   function search() {
     console.log("trigger search");
   }
@@ -15,9 +15,9 @@ export default function HeaderComponent() {
         <span className="material-symbols-outlined">menu</span>
       </button>
       <nav id="top-navigation" className={`top-navigation ${toggle && "trigger-nav"}`}>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="/#/">Home</a>
+        <a href="/#/about">About</a>
+        <a href="/#/contact">Contact</a>
         <button onClick={() => search()}>
           <span className="material-symbols-outlined">search</span>
         </button>

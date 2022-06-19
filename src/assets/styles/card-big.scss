@@ -1,0 +1,61 @@
+@import "variables";
+
+.card-big-container {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: $light-blue;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
+  .card-content {
+    color: white;
+    padding: 35px 52px 52px 52px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      font-size: 18px;
+      font-weight: 700;
+      width: 60%;
+    }
+
+    span {
+      font-size: 12px;
+      font-weight: 400;
+      opacity: 0.8;
+      width: 60%;
+    }
+
+    button {
+      border: none;
+      background-color: $accent;
+      width: 230px;
+      height: 47px;
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    .button-disabled {
+      opacity: 0.5;
+    }
+
+    .button-disabled:hover {
+      cursor: initial;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+  }
+}

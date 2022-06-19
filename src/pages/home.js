@@ -1,27 +1,44 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { DataContext } from "../index";
 import CardComponent from "../components/card";
 import CartComponent from "../components/cart";
-import HeaderComponent from "../components/header";
+import CardBigComponent from "../components/card-big";
 
-export default function HomePage() {
+export function HomePage() {
+  const { data, loading } = useContext(DataContext);
+  const [selected, setSelected] = useState();
+
   return (
-    <div>
-      <HeaderComponent></HeaderComponent>
-      <main className="container">
-        <div className="sub-container">
-          <CartComponent></CartComponent>
-          <div className="items-container">
-            <CardComponent></CardComponent>
-            <CardComponent></CardComponent>
-            <CardComponent></CardComponent>
-            <CardComponent></CardComponent>
-            <CardComponent></CardComponent>
-            <CardComponent></CardComponent>
-            <CardComponent></CardComponent>
-            <CardComponent></CardComponent>
+    <main className="container">
+      <div className="sub-container">
+        <CartComponent></CartComponent>
+        {loading && (
+          <div className="loading-container">
+            <span></span>
           </div>
+        )}
+        <div className="items-container">
+          {selected && <CardBigComponent item={selected}></CardBigComponent>}
+          {selected && (
+            <span className="material-symbols-outlined back-button" onClick={() => setSelected(undefined)}>
+              arrow_back
+            </span>
+          )}
+          {!selected &&
+            data.map((d) => {
+              return (
+                <div
+                  key={d.id}
+                  onClick={() => {
+                    setSelected(d);
+                  }}
+                >
+                  <CardComponent image={d.url} title={d.title} description={d.description}></CardComponent>
+                </div>
+              );
+            })}
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

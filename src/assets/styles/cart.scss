@@ -47,6 +47,30 @@
   border: 1px solid white;
   border-style: dashed;
   margin-top: 20px;
+  padding: 12px;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  .cart-item {
+    font-size: 14px;
+    font-weight: 500;
+    height: 39px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: $dark-blue;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+
+    span {
+      color: $accent;
+      margin-right: 8px;
+    }
+  }
 
   .cart-empty {
     opacity: 0.77;
